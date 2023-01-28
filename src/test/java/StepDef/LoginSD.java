@@ -1,7 +1,6 @@
 package StepDef;
 
-import CXEUtils.PageObjectManager;
-import CXEVoiceFactory.DriverFactory;
+import Base.InstanceManager;
 import Page.Actions.Login;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 public class LoginSD {
 
     WebDriver driver;
-    PageObjectManager pageObjectManager = PageObjectManager.getInstance();
+    InstanceManager instanceManager = InstanceManager.getInstance();
     Login login;
 
     public LoginSD() {
@@ -23,8 +22,8 @@ public class LoginSD {
 
     @Given("User is on the login page of cxe {string}")
     public void user_is_on_the_login_page_of_cxe(String url) {
-        DriverFactory.openPage(url);
-        login = new Login(DriverFactory.getDriver());
+//        DriverFactory.openPage(url);
+//        login = new Login(DriverFactory.getDriver());
         System.out.println("On the login page");
     }
 
